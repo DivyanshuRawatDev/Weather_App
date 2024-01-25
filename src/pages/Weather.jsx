@@ -20,7 +20,6 @@ const Weather = () => {
       <Box
         backgroundImage={"linear-gradient(to bottom , #E9F4F8, #7DC2E0)"}
         width={"80vh"}
-        height={{ base: "80vh", lg: "55vh" }}
         p={"35px"}
         mt={"100px"}
       >
