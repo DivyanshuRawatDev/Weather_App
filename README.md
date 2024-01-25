@@ -2,7 +2,7 @@
 ## React Weather App
 
 ### Features
-1 - Search by City: Enter the name of any city in the UK to get real-time weather information.
+1 - Search by City: Enter the name of any city to get real-time weather information.
 
 2 - Temperature and Weather Conditions: View the current temperature, weather conditions, and other relevant details.
 
