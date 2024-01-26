@@ -16,7 +16,7 @@ const Weather = () => {
   }, []);
 
   return (
-    <Box>
+    <Box overflow={"hidden"}>
       <Box
         backgroundImage={"linear-gradient(to bottom , #E9F4F8, #7DC2E0)"}
         width={{ base: "45vh", md: "60vh", lg: "80vh" }}
