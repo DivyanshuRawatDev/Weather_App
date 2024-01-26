@@ -19,22 +19,29 @@ const Weather = () => {
     <Box>
       <Box
         backgroundImage={"linear-gradient(to bottom , #E9F4F8, #7DC2E0)"}
-        width={{ base: "40vh", md: "60vh", lg: "80vh" }}
-        p={"35px"}
+        width={{ base: "45vh", md: "60vh", lg: "80vh" }}
+        p={{ base: "15px", md: "35px" }}
         mt={"100px"}
       >
-        <Box mb={"30px"} textAlign={"left"}>
+        <Box mb={{ base: "10px", md: "30px" }} textAlign={"left"}>
           <Heading fontFamily={"Teko"} size={"xl"} textColor={"#427D8A"}>
             React Weather
           </Heading>
         </Box>
-        <Box mb={"30px"} borderRadius={"10px"}>
+        <Box mb={{ base: "15px", md: "30px" }} borderRadius={"10px"}>
           <Flex>
-            <Input placeholder="London" w={"69vh"} bg={"white"} ref={city} />
+            <Input
+              h={{ base: "35px", md: "40px" }}
+              placeholder="London"
+              w={"69vh"}
+              bg={"white"}
+              ref={city}
+            />
             <Button
               ml={2}
               colorScheme="teal"
               bg={"#448895"}
+              h={{ base: "35px", md: "40px" }}
               onClick={() => {
                 dispatch(fetchWeather(city.current.value));
               }}
