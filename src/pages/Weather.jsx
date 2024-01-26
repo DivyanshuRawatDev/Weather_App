@@ -19,7 +19,7 @@ const Weather = () => {
     <Box>
       <Box
         backgroundImage={"linear-gradient(to bottom , #E9F4F8, #7DC2E0)"}
-        width={"80vh"}
+        width={{ base: "40vh", md: "60vh", lg: "80vh" }}
         p={"35px"}
         mt={"100px"}
       >
@@ -55,41 +55,53 @@ const Weather = () => {
             </Heading>
           </Box>
           <Box>
-            <Flex justifyContent={"space-around"}>
+            <Flex
+              justifyContent={"space-around"}
+              direction={{ base: "column", md: "row" }}
+            >
               {/* Paris */}
+
               <Box>
-                <Heading
-                  fontFamily={"Teko"}
-                  size={"lg"}
-                  textAlign={"left"}
-                  mb={"10px"}
-                  textColor={"#53ABBF"}
-                >
-                  {data && data.name}
-                </Heading>
-                <Box>
-                  <Flex gap={"20px"}>
-                    <Image
-                      src={
-                        data &&
-                        `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-                      }
-                      alt="Weather"
-                    />
-                    <Heading size={"xl"} fontFamily={"Teko"} textColor={"grey"}>
-                      {data && Math.round(data.main.temp - 273.15) + "°C"}
+                <Flex direction={{ base: "row", md: "column" }}>
+                  <Heading
+                    fontFamily={"Teko"}
+                    size={"lg"}
+                    textAlign={"left"}
+                    mb={"10px"}
+                    textColor={"#53ABBF"}
+                  >
+                    {data && data.name}
+                  </Heading>
+                  <Box>
+                    <Flex gap={"20px"}>
+                      <Image
+                        src={
+                          data &&
+                          `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+                        }
+                        alt="Weather"
+                      />
+                      <Heading
+                        size={"xl"}
+                        fontFamily={"Teko"}
+                        textColor={"grey"}
+                      >
+                        {data && Math.round(data.main.temp - 273.15) + "°C"}
+                      </Heading>
+                    </Flex>
+                  </Box>
+                  <Flex align={{ base: "flex-end", md: "flex-start" }}>
+                    <Heading
+                      fontFamily={"Teko"}
+                      size={"md"}
+                      textAlign={{ base: "left", md: "left" }}
+                      mt={"15px"}
+                      textColor={"#848585"}
+                    >
+                      {data && data.weather[0].main}
                     </Heading>
                   </Flex>
-                </Box>
-                <Heading
-                  fontFamily={"Teko"}
-                  size={"md"}
-                  textAlign={"left"}
-                  mt={"15px"}
-                  textColor={"#848585"}
-                >
-                  {data && data.weather[0].main}
-                </Heading>
+                </Flex>
               </Box>
               {/* Feels Like Section */}
               <Box w={"30%"}>
