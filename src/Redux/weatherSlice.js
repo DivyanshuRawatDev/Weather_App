@@ -21,10 +21,12 @@ const weatherSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchWeather.pending, (state) => {
       state.isLoading = true;
+      state.isError = false;
     });
     builder.addCase(fetchWeather.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
+      state.isError = false;
     });
     builder.addCase(fetchWeather.rejected, (state, action) => {
       console.log("Error :", action.payload);

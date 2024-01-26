@@ -16,12 +16,13 @@ const Weather = () => {
   }, []);
 
   return (
-    <Box overflow={"hidden"} width={"100%"}>
+    <Box>
       <Box
         backgroundImage={"linear-gradient(to bottom , #E9F4F8, #7DC2E0)"}
         width={{ base: "45vh", md: "60vh", lg: "80vh" }}
         p={{ base: "15px", md: "35px" }}
         mt={"100px"}
+        margin={"auto"}
       >
         <Box mb={{ base: "10px", md: "30px" }} textAlign={"left"}>
           <Heading fontFamily={"Teko"} size={"xl"} textColor={"#427D8A"}>
@@ -43,7 +44,9 @@ const Weather = () => {
               bg={"#448895"}
               h={{ base: "35px", md: "40px" }}
               onClick={() => {
-                dispatch(fetchWeather(city.current.value));
+                const inputWords = city.current.value.split(" ");
+                const firstWord = inputWords.length > 0 ? inputWords[0] : "";
+                dispatch(fetchWeather(firstWord));
               }}
             >
               Search
