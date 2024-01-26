@@ -104,12 +104,13 @@ const Weather = () => {
                 </Flex>
               </Box>
               {/* Feels Like Section */}
-              <Box w={"30%"}>
+              <Box w={{ md: "30%" }}>
                 <Heading
                   size={"lg"}
                   mb={"8px"}
                   fontFamily={"Teko"}
                   textColor={"#484D4F"}
+                  mt={{ base: "25px", md: "0" }}
                 >
                   {data &&
                     "Feels like " +
@@ -142,7 +143,13 @@ const Weather = () => {
                   </Box>
                 </Box>
                 <Box pb={"8px"}>
-                  <Flex gap={"20px"} justifyContent={"space-between"}>
+                  <Flex
+                    gap={"20px"}
+                    justifyContent={{
+                      base: "space-around",
+                      md: "space-between",
+                    }}
+                  >
                     <Box display={"flex"} gap={"5px"} alignItems={"center"}>
                       <Image
                         src="https://img.icons8.com/office/200/hygrometer.png"
@@ -168,7 +175,13 @@ const Weather = () => {
                   </Flex>
                 </Box>
                 <Box pb={"8px"}>
-                  <Flex gap={"20px"} justifyContent={"space-between"}>
+                  <Flex
+                    gap={"20px"}
+                    justifyContent={{
+                      base: "space-around",
+                      md: "space-between",
+                    }}
+                  >
                     <Box display={"flex"} gap={"5px"} alignItems={"center"}>
                       <Image
                         height={5}
@@ -178,6 +191,7 @@ const Weather = () => {
                         size={"md"}
                         fontFamily={"Teko"}
                         textColor={"#848585"}
+                        mr={{ base: 6, md: 0 }}
                       >
                         Wind
                       </Heading>
@@ -192,7 +206,13 @@ const Weather = () => {
                   </Flex>
                 </Box>
                 <Box pb={"8px"}>
-                  <Flex gap={"20px"} justifyContent={"space-between"}>
+                  <Flex
+                    gap={"20px"}
+                    justifyContent={{
+                      base: "space-around",
+                      md: "space-between",
+                    }}
+                  >
                     <Box display={"flex"} gap={"5px"} alignItems={"center"}>
                       <Image
                         src="https://img.icons8.com/fluency/48/barometer-gauge.png"
@@ -202,6 +222,7 @@ const Weather = () => {
                         size={"md"}
                         fontFamily={"Teko"}
                         textColor={"#848585"}
+                        mr={{ base: 2, md: 0 }}
                       >
                         Pressure
                       </Heading>
